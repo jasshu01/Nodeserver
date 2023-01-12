@@ -8,12 +8,13 @@ app.get('/', (req, res) => {
     res.send('Chat Server is running on port 3000')
 });
 
-
+var userConnected = false;
 
 io.on('connection', (socket) => {
 
-
-    // console.log('user connected')
+    if (userConnected == false)
+        console.log('user connected')
+    userConnected = true;
 
     socket.on('join', function(userNickname) {
 
@@ -50,7 +51,7 @@ io.on('connection', (socket) => {
     socket.on('disconnect', function() {
         console.log(' user has left ')
         socket.broadcast.emit("userdisconnect", " user has left ")
-
+        userConnected = false;
     });
 
 
