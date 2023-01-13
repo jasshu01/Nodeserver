@@ -1,11 +1,16 @@
 const express = require('express'),
     http = require('http'),
     app = express(),
+    path = require('path'),
     server = http.createServer(app),
     io = require('socket.io')().listen(server);
+
+
+
 app.get('/', (req, res) => {
 
-    res.send('Chat Server is running on port 3000')
+    res.sendFile(path.join(__dirname + "/index.html"));
+    // res.send('Chat Server is running on port 3000')
 });
 
 var userConnected = false;
@@ -25,13 +30,15 @@ io.on('connection', (socket) => {
 
 
     app.get("/startlogging", (req, res) => {
+        res.sendFile(path.join(__dirname + "/stoplogging.html"));
         socket.broadcast.emit('start_Logging', " Start Capturing the Logs ");
-        res.send("Application has started capturing the logs");
+        // res.send("Application has started capturing the logs");
 
     });
     app.get("/stoplogging", (req, res) => {
+        res.sendFile(path.join(__dirname + "/index.html"));
         socket.broadcast.emit('stop_Logging', " Stop Capturing the Logs ");
-        res.send("Application has stopped capturing the logs");
+        // res.send("Application has stopped capturing the logs");
 
     });
 
