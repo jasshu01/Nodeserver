@@ -1,22 +1,22 @@
 {
-    "name": "nodejs",
-    "version": "1.0.0",
-    "description": "## Installation",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "nodemon server.js"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "express": "^4.15.3",
-        "nodemon": "^1.11.0",
-        "socket.io": "^2.0.3"
-    },
-    "repository": {
-        "type": "git"
-    },
-    "keywords": []
-
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "## Installation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3",
+    "nodemon": "^2.0.20",
+    "socket.io": "^2.0.3"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [],
+  "devDependencies": {}
 }
